@@ -9,23 +9,25 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.hwe.swx.capstonedicodingexpert.R
+import com.hwe.swx.capstonedicodingexpert.databinding.FragmentMoviesBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MoviesFragment : Fragment() {
 
-    private lateinit var moviesViewModel: MoviesViewModel
+    private val moviesViewModel: MoviesViewModel by viewModel()
+    private lateinit var binding: FragmentMoviesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        moviesViewModel =
-            ViewModelProviders.of(this).get(MoviesViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_movies, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        moviesViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        binding = FragmentMoviesBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.textHome.text = "asd"
     }
 }

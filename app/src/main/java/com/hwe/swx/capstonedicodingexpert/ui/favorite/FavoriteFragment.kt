@@ -9,23 +9,25 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.hwe.swx.capstonedicodingexpert.R
+import com.hwe.swx.capstonedicodingexpert.databinding.FragmentFavoriteBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class FavoriteFragment : Fragment() {
 
-    private lateinit var favoriteViewModel: FavoriteViewModel
+    private val favoriteViewModel: FavoriteViewModel by viewModel()
+    private lateinit var binding: FragmentFavoriteBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        favoriteViewModel =
-            ViewModelProviders.of(this).get(FavoriteViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_favorite, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        favoriteViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        binding = FragmentFavoriteBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 }
