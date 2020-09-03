@@ -6,7 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class MoviePopularTopRated(
+data class MovieTopRatedEntity(
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "id") val id: Int = 0,
@@ -16,8 +16,8 @@ data class MoviePopularTopRated(
     @ColumnInfo(name = "poster_path") val poster_path: String = "",
     @ColumnInfo(name = "release_date") val release_date: String = "",
     @ColumnInfo(name = "title") val title: String = "",
-    @ColumnInfo(name = "vote_average") val vote_average: Int = 0,
+    @ColumnInfo(name = "vote_average") val vote_average: Double = 0.0,
     @ColumnInfo(name = "vote_count") val vote_count: Int = 0,
 
-    @ColumnInfo(name = "is_favorite") val is_favorite: Int = 0
+    @ColumnInfo(name = "is_favorite") val is_favorite: Boolean = false
 )

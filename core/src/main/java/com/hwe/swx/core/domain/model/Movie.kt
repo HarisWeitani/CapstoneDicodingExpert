@@ -7,7 +7,7 @@ data class Movie(
     val poster_path: String = "",
     val release_date: String = "",
     val title: String = "",
-    val vote_average: Int = 0,
+    val vote_average: Double = 0.0,
     val vote_count: Int = 0,
-    val is_favorite: Int = 0
+    val is_favorite: Boolean = false
 )

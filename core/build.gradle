@@ -19,7 +19,6 @@ android {
 
         buildConfigField("String", "API_KEY", '"2a309297225b67e15c525ba69523f38d"')
         buildConfigField("String", "SERVER_URL", '"https://api.themoviedb.org/"')
-        buildConfigField("String", "POSTER_BASE_URL", '"https://image.tmdb.org/t/p/w500"')
     }
 
     buildTypes {

@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("/3/genre/movie/popular")
+    @GET("/3/movie/top_rated")
     suspend fun getAllGenres(): ResponseMoviesTopRated
 
     @GET("/3/search/movie")
