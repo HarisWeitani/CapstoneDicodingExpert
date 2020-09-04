@@ -10,4 +10,11 @@ class MovieInteractor(private val movieRepository: IMovieRepository) : MovieUseC
     override fun getAllMoviesTopRated(): Flow<Resource<List<Movie>>> =
         movieRepository.getAllMoviesTopRated()
 
+    override fun getAllMoviesFavorite(): Flow<List<Movie>> =
+        movieRepository.getAllMoviesFavorite()
+
+    override suspend fun updateMoviesFavorite(movie: Movie, isFavorite: Boolean) =
+        movieRepository.updateMoviesFavorite(movie, isFavorite)
+
+
 }

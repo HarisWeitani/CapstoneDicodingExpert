@@ -3,6 +3,7 @@ package com.hwe.swx.capstonedicodingexpert.ui.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import com.hwe.swx.capstonedicodingexpert.BuildConfig
 import com.hwe.swx.capstonedicodingexpert.R
 import com.hwe.swx.capstonedicodingexpert.databinding.ActivityMovieDetailBinding
@@ -39,12 +40,32 @@ class MovieDetailActivity : AppCompatActivity() {
             binding.tvPopularity.text = movie.popularity.toString()
             binding.tvVoteAverage.text = movie.vote_average.toString()
             binding.tvVoteCount.text = movie.vote_count.toString()
-            binding.ivFavorite.visibility = if (movie.is_favorite) View.VISIBLE else View.GONE
+            binding.ivFavorite.setImageDrawable(
+                if (movie.is_favorite)
+                    ContextCompat.getDrawable(this, R.drawable.ic_baseline_favorite_24)
+                else
+                    ContextCompat.getDrawable(this, R.drawable.ic_baseline_favorite_border_24)
+            )
 
             binding.tvTitle.text = movie.title
             binding.tvReleaseDate.text = movie.release_date
             binding.tvOverview.text = movie.overview
+
+            binding.ivFavorite.setOnClickListener {
+                setStatusFavorite(!movie.is_favorite)
+                movieDetailViewModel.setFavoriteMovie(movie, !movie.is_favorite)
+            }
         }
+    }
+
+    private fun setStatusFavorite(isFavorite: Boolean) {
+        binding.ivFavorite.setImageDrawable(
+            if (isFavorite) {
+                ContextCompat.getDrawable(this, R.drawable.ic_baseline_favorite_24)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.ic_baseline_favorite_border_24)
+            }
+        )
     }
 
 

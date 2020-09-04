@@ -28,6 +28,8 @@
             android:id="@+id/iv_favorite"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:background="@drawable/bg_ic_favorite"
+            android:padding="5dp"
             android:src="@drawable/ic_baseline_favorite_24"
             app:layout_constraintBottom_toBottomOf="@id/iv_poster"
             app:layout_constraintEnd_toEndOf="@id/iv_poster"

@@ -19,5 +19,5 @@ data class MovieTopRatedEntity(
     @ColumnInfo(name = "vote_average") val vote_average: Double = 0.0,
     @ColumnInfo(name = "vote_count") val vote_count: Int = 0,
 
-    @ColumnInfo(name = "is_favorite") val is_favorite: Boolean = false
+    @ColumnInfo(name = "is_favorite") var is_favorite: Boolean = false
 )

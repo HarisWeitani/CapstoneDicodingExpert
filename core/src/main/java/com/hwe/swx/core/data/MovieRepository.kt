@@ -39,4 +39,17 @@ class MovieRepository(
         }.asFlow()
     }
 
+    override fun getAllMoviesFavorite(): Flow<List<Movie>> {
+        return localDataSource.getAllMoviesTopRatedFav().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
+    }
+
+    override suspend fun updateMoviesFavorite(movie: Movie, isFavorite: Boolean) {
+        localDataSource.setMovieFavorite(
+            movie = DataMapper.mapDomainToEntity(movie),
+            isFavorite = isFavorite
+        )
+    }
+
 }
