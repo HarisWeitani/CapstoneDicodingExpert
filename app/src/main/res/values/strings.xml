@@ -6,4 +6,7 @@
     <string name="error_msg">Unknown Error</string>
     <string name="movie_detail">Movie Detail</string>
     <string name="nothing_to_see_here">Nothing to see here</string>
+    <string name="title_searchmovie">Search Movie</string>
+    <string name="title_tvshow">TvShow</string>
+    <string name="title_favorite">Favorite</string>
 </resources>
