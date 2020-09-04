@@ -7,6 +7,7 @@ import com.hwe.swx.core.domain.model.Movie
 class MovieListAdapter : RecyclerView.Adapter<MovieListViewHolder>() {
 
     private val movieList = ArrayList<Movie>()
+    var onItemClick: ((Movie) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder =
         MovieListViewHolder.create(parent)
@@ -14,6 +15,9 @@ class MovieListAdapter : RecyclerView.Adapter<MovieListViewHolder>() {
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
         holder.bind(movieList[position])
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(movieList[position])
+        }
     }
 
     override fun getItemCount(): Int = movieList.size

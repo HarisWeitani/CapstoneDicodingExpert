@@ -1,5 +1,6 @@
 package com.hwe.swx.capstonedicodingexpert.ui.adapter
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -28,10 +29,6 @@ class MovieListViewHolder(
         binding.tvReleaseDate.text = data.release_date
         binding.tvVoteAverage.text = data.vote_average.toString()
         binding.ivFavorite.visibility = if (data.is_favorite) View.VISIBLE else View.GONE
-
-        itemView.setOnClickListener {
-            Log.d("asoy", "bind: ${data.title}")
-        }
     }
 
     companion object {

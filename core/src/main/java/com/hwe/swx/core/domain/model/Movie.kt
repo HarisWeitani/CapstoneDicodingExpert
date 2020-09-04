@@ -1,5 +1,9 @@
 package com.hwe.swx.core.domain.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Movie(
     val id: Int = 0,
     val overview: String = "",
@@ -10,4 +14,4 @@ data class Movie(
     val vote_average: Double = 0.0,
     val vote_count: Int = 0,
     val is_favorite: Boolean = false
-)
+): Parcelable

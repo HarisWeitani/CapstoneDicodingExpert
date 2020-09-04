@@ -7,8 +7,5 @@ import com.hwe.swx.core.domain.usecase.MovieUseCase
 
 class FavoriteViewModel(movieUseCase: MovieUseCase) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
-    }
-    val text: LiveData<String> = _text
+
 }
