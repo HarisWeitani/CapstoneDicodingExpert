@@ -47,6 +47,7 @@ class FavoriteActivity : AppCompatActivity() {
                 favoriteViewModel.moviesFavorite.observe(this, Observer {
                     movieAdapter.setMovieList(it)
                     tv_error_msg.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+                    animate_empty.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
                 })
 
             }
