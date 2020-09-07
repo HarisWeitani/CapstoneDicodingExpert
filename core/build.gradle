@@ -6,7 +6,7 @@ apply from: '../shared_dependencies.gradle'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 21
@@ -23,6 +23,10 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -46,5 +50,8 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     //usage for app
     api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    implementation "net.zetetic:android-database-sqlcipher:$sql_chiper"
+    implementation "androidx.sqlite:sqlite:$sql_lite"
 
 }
