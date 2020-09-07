@@ -10,4 +10,8 @@
     <string name="title_tvshow">TvShow</string>
     <string name="title_favorite">Favorite</string>
     <string name="favorite">Favorite</string>
+    <string name="bg_item">Bg Item</string>
+    <string name="image_poster">Image Poster</string>
+    <string name="icon_favorite">Icon Favorite</string>
+    <string name="title">Title</string>
 </resources>

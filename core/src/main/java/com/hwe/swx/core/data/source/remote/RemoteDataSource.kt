@@ -22,13 +22,13 @@ class RemoteDataSource(private val apiService: ApiService) {
                     emit(ApiResponse.Success(response))
                 }
             } catch (e: IOException) {
-                emit(ApiResponse.Error(e.localizedMessage))
+                emit(ApiResponse.Error(e.localizedMessage?:"IO Exception"))
             } catch (e: HttpException) {
-                emit(ApiResponse.Error(e.localizedMessage))
+                emit(ApiResponse.Error(e.localizedMessage?:"Http Exception"))
             } catch (e: NullPointerException) {
-                emit(ApiResponse.Error(e.localizedMessage))
+                emit(ApiResponse.Error(e.localizedMessage?:"Null Pointer Exception"))
             } catch (e: Exception) {
-                emit(ApiResponse.Error(e.localizedMessage))
+                emit(ApiResponse.Error(e.localizedMessage?:"Unknown Exception"))
             }
         }.flowOn(Dispatchers.IO)
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginTop="4dp"
@@ -21,6 +21,7 @@
             android:layout_height="200dp"
             android:src="@drawable/ic_baseline_image_24"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/image_poster"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,6 +32,7 @@
             android:background="@drawable/bg_ic_favorite"
             android:padding="5dp"
             android:src="@drawable/ic_baseline_favorite_24"
+            android:contentDescription="@string/icon_favorite"
             app:layout_constraintBottom_toBottomOf="@id/iv_poster"
             app:layout_constraintEnd_toEndOf="@id/iv_poster"
             app:layout_constraintStart_toEndOf="@id/iv_poster"/>
@@ -39,11 +41,11 @@
             android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Title"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginStart="16dp"
+            tools:text="@string/title"
             app:layout_constraintBottom_toTopOf="@id/tv_release_date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -55,8 +57,8 @@
             android:id="@+id/tv_release_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Release Date"
             android:textSize="12sp"
+            tools:text="Release Date"
             app:layout_constraintBottom_toTopOf="@id/tv_vote_average"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_title"
@@ -66,8 +68,8 @@
             android:id="@+id/tv_vote_average"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vote Average"
             android:textSize="12sp"
+            tools:text="Vote Average"
             app:layout_constraintBottom_toBottomOf="@id/iv_poster"
             app:layout_constraintStart_toStartOf="@id/tv_title"
             app:layout_constraintTop_toBottomOf="@id/tv_release_date" />
