@@ -30,6 +30,8 @@ buildscript {
     ext.sql_lite = "2.1.0"
     ext.sql_chiper = "4.4.0"
 
+    ext.lottie_version = "3.4.1"
+
     repositories {
         google()
         jcenter()
